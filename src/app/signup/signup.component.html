@@ -1,0 +1,101 @@
+<div class="background-blur"></div>
+<section class="vh-100 bg-image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5 xyz">
+                <h2 class="fw-bold mb-2 text-uppercase text-white-50 mb-5 rolelbl">Create an account</h2>
+   
+                <form (ngSubmit)="registerUser()" [formGroup]="contactForm">
+   
+                  <div  data-mdb-input-init class="form-outline form-white mb-4">
+                      <label class="form-label" for="fisrtname">First Name</label>
+                    <input type="text" [(ngModel)]="emp.firstName"   placeholder="Enter your first name" id="firstname" formControlName="firstname"  class="form-control form-control-lg" required/>
+                    <span *ngIf="contactForm.get('username')?.invalid && (contactForm.get('username')?.dirty || contactForm.get('username')?.touched)">
+                      <small class="text-danger"
+                          *ngIf="contactForm.get('username')?.hasError('required')"
+                      >This field is required.</small>
+                    </span>
+                  </div>
+
+                  <div  data-mdb-input-init class="form-outline form-white mb-4">
+                    <label class="form-label" for="lastname">Last Name</label>
+                  <input type="text" [(ngModel)]="emp.lastName" id="lastname"  placeholder="Enter your last name" formControlName="lastname"  class="form-control form-control-lg" required/>
+                  <span *ngIf="contactForm.get('username')?.invalid && (contactForm.get('username')?.dirty || contactForm.get('username')?.touched)">
+                    <small class="text-danger"
+                        *ngIf="contactForm.get('username')?.hasError('required')"
+                    >This field is required.</small>
+                  </span>
+                </div>
+   
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                      <label class="form-label" for="email">Your Email</label>
+                    <input type="email" id="email"  placeholder="Enter your E-mail" [(ngModel)]="emp.emailId" formControlName="email" class="form-control form-control-lg" required/>
+                    <span *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+                      <small class="text-danger"
+                          *ngIf="contactForm.get('email')?.hasError('required')"
+                      >This field is required.</small>
+                      <small class="text-danger"
+                          *ngIf="contactForm.get('email')?.hasError('email')"
+                      >Please enter correct email address</small>
+                    </span>
+                  </div>
+   
+                  <div  data-mdb-input-init class="form-outline form-white mb-4">
+                      <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password"  placeholder="Enter your password" [(ngModel)]="emp.password" class="form-control form-control-lg" formControlName="password" required/>
+                    <span *ngIf="contactForm.get('password')?.invalid && (contactForm.get('password')?.dirty || contactForm.get('password')?.touched)">
+                      <small class="text-danger"
+                          *ngIf="contactForm.get('password')?.hasError('required')"
+                      >This field is required.</small>
+                  </span>
+                  </div>
+   
+   
+              <div  data-mdb-input-init class="form-outline form-white mb-4">
+                <label class="form-label" for="gender">Gender</label>
+              <input type="text" id="gender"  placeholder="Enter your Gender" [(ngModel)]="emp.gender" formControlName="gender" class="form-control form-control-lg" required/>
+              <span *ngIf="contactForm.get('gender')?.invalid && (contactForm.get('gender')?.dirty || contactForm.get('gender')?.touched)">
+                <small class="text-danger"
+                    *ngIf="contactForm.get('gender')?.hasError('required')"
+                >This field is required.</small>
+              </span>
+            </div>
+   
+            <div  data-mdb-input-init class="form-outline form-white mb-4">
+              <label class="form-label" for="mobileNo">Contact</label>
+            <input type="text" id="mobileNo"  placeholder="Enter your contact" [(ngModel)]="emp.contact"  class="form-control form-control-lg" maxlength="10" formControlName="mobileNo" required/>
+            <span *ngIf="contactForm.get('mobileNo')?.invalid && (contactForm.get('mobileNo')?.dirty || contactForm.get('mobileNo')?.touched)">
+              <small class="text-danger"
+                  *ngIf="contactForm.get('mobileNo')?.hasError('required')"
+              >This field is required.</small>
+            </span>
+          </div>
+
+          <td>
+            <label class="rolelbl">Role : </label>
+            <select (change)="onSelectRole($event)">
+                <option>Role </option>
+                <option>HR</option>
+                <option>EMPLOYEE</option>
+            </select>
+          </td>
+   
+                  <div class="d-flex justify-content-center">
+                    <button (click)="registerUser()" type="reset" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5">Register</button>
+                  </div>
+   
+                  <p class="rolelbl">Have already an account? <a routerLink="/login"
+                      class="rolelbl"><u>Login here</u></a></p>
+   
+                </form>
+   
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

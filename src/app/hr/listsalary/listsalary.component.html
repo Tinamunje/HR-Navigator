@@ -1,0 +1,21 @@
+<div class="background-blur"></div>
+<table class="table table-bordered" >
+    <thead>
+    <tr>
+      <th scope="col">Employee Id</th>
+      <th scope="col">Account No</th>
+      <th scope="col">Month Pay</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr *ngFor="let user of listofuser">
+      <td>{{user.employeeId}}</td>
+      <td>{{user.accountNo}}</td>
+      <td>{{user.monthPay}}</td>
+     
+      
+      </tr>
+    </tbody>
+  </table>
+
+

@@ -1,0 +1,27 @@
+<div class="background-blur"></div>
+<table class="table table-bordered" >
+    <thead>
+    <tr>
+      <th scope="col">Employee Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Role</th>
+      <th scope="col">Gender</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr *ngFor="let user of listofuser">
+      <td>{{user.employeeId}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.contact}}</td>
+      <td>{{user.emailId}}</td>
+      <td>{{user.role}}</td>
+      <td>{{user.gender}}</td>
+      
+      </tr>
+    </tbody>
+  </table>
+

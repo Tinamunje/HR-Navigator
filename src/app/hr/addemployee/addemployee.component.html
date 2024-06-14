@@ -1,0 +1,85 @@
+<div class="background-blur"></div>
+<section class="vh-100 bg-image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5 xyz">
+                <h2 class="fw-bold mb-2 text-uppercase text-white-50 mb-5 rolelbl">Add Employee</h2>
+   
+   
+            <div  data-mdb-input-init class="form-outline form-white mb-4">
+                <div [hidden]="submitted" style="width: 400px;">
+                    <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+                    
+                        <div data-mdb-input-init class="form-outline form-white mb-4">
+                            <label  class="form-label" for="FirstName">First Name:</label>
+                            <input type="text" class="form-control" id="FirstName" required [(ngModel)]="user.firstName" name="FirstName">
+                        </div>
+                        <div  data-mdb-input-init class="form-outline form-white mb-4">
+                            <label class="form-label" for="LastName">Last Name:</label>
+                            <input type="text" class="form-control" id="LastName" required [(ngModel)]="user.lastName" name="LastName">
+                        </div>
+                        <div  data-mdb-input-init class="form-outline form-white mb-4">
+                            <label class="form-label" for="contact">Contact:</label>
+                            <input type="tel" class="form-control" id="contact" required [(ngModel)]="user.contact" name="contact"
+                            name="contact" #contact="ngModel" pattern="^[0-9]{10}$">
+                            <div *ngIf="contact.invalid && (contact.dirty || contact.touched)" class="alert alert-danger">
+                                Contact must be 10 digits.
+                            </div>
+                        </div>
+                        <div  data-mdb-input-init class="form-outline form-white mb-4">
+                            <label class="form-label" for="Password">Password</label>
+                            <input type="text" class="form-control" id="Password" required [(ngModel)]="user.password" name="Password">
+                        </div>
+                
+                        <div data-mdb-input-init class="form-outline form-white mb-4">
+                        <label class="form-label" for="emailId">Email Address:</label>
+                        <input type="email" class="form-control" id="emailId" required [(ngModel)]="user.emailId" name="emailId"
+                        name="emailId" #emailId="ngModel" pattern="^[a-zA-Z0-9._%+-]+@gmail.com$">
+                        <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="alert alert-danger">
+                                Email should be gmail.com.
+                            </div>
+                    </div>
+                
+                    <div data-mdb-input-init class="form-outline form-white mb-4">
+                        <label class="form-label" for="Role">Role:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Role" id="Developer" [(ngModel)]="user.role" value="Developer">
+                            <label class="form-label" for="Developer">DEVELOPER</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Role" id="Tester" [(ngModel)]="user.role" value="Tester">
+                            <label class="form-label" for="Tester">TESTER</label>
+                        </div>
+                        <div data-mdb-input-init class="form-outline form-white mb-4">
+                            <input class="form-check-input" type="radio" name="Role" id="Support" [(ngModel)]="user.role" value="Support">
+                            <label class="form-label" for="Support">SUPPORT</label>
+                        </div>
+                        <div  data-mdb-input-init class="form-outline form-white mb-4">
+                            <label  class="form-label" for="gender">Gender:</label>
+                            <select class="form-control" id="gender" required [(ngModel)]="user.gender" name="gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        
+                        </div>
+                    </div>
+                <br>
+                
+                        <button type="submit" class=" data-mdb-button-init data-mdb-ripple-init btn btn-outline-light btn-lg px-5 btn btn-success "[disabled]="!employeeForm.form.valid">Submit</button>
+                    </form>
+                </div>
+                <br>
+                <div [hidden]="!submitted">
+                    <h4>Employee data submitted successfully!</h4>
+                </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

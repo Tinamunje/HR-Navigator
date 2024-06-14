@@ -1,0 +1,34 @@
+.table {
+
+    position: relative;
+    z-index: 2; 
+      margin: 0 auto;
+      padding-top: 50px;
+      margin-left: 40px;
+      margin-top: 10px;
+      margin-right: 20px;
+      opacity: 0.8;
+     
+    }
+    
+    .table thead th {
+     
+      font-weight: bold;
+      z-index: 1; 
+    }
+  
+    .background-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-image: url('https://www.phoenixabc.co.uk/wp-content/uploads/2019/12/rsz_04.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(5px);
+      z-index: 0; 
+      pointer-events: none;
+    }
+  
+  

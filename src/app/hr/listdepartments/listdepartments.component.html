@@ -1,0 +1,22 @@
+
+<div class="background-blur"></div>
+<table class=" table table-bordered xyz" >
+    <thead>
+    <tr>
+      <th scope="col">Department Id</th>
+      <th scope="col">Department Name</th>
+      <th scope="col">Department Desc</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr *ngFor="let user of listofuser">
+      <td>{{user.departmentId}}</td>
+      <td>{{user.departmentName}}</td>
+      <td>{{user.departmentDesc}}</td>
+     
+      
+      </tr>
+    </tbody>
+  </table>
+
+

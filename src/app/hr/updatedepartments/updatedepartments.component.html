@@ -1,0 +1,37 @@
+<div class="background-blur"></div>
+<section class="vh-100 bg-image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5 xyz">
+                <h2 class="fw-bold mb-2 text-uppercase text-white-50 mb-5 rolelbl">Update Department</h2>
+                  <form (ngSubmit)="onSubmit()">
+                    <div data-mdb-input-init class="form-outline form-white mb-4">
+                        <label for="DepartmentId">Department Id:</label>
+                        <input type="number" class="form-control" id="DepartmentId" required [(ngModel)]="updateDept" name="DepartmentId" >
+                        </div>
+                         <div data-mdb-input-init class="form-outline form-white mb-4">
+                            <label for="departmentDesc">Department Desc:</label>
+                            <input type="text" class="form-control" id="departmentDesc" required [(ngModel)]="descTemp" name="departmentDesc" >
+                        </div>
+                        <br>
+        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5">Update</button>
+    </form>
+</div>
+<div class="alert alert-danger text-center" *ngIf="errorMessage">
+    {{errorMessage}}
+                        </div>
+                    </div>
+                </div>
+             </div>
+         </div>
+    </div>
+</section>
+
+
+
+
+
+
